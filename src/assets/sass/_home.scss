@@ -1,0 +1,47 @@
+//landing-page
+.landing-page{
+   
+    .landing-page-konten{ 
+
+        &-maintext{
+            h1{
+                font-family: 'Mosserat';
+            }
+            p{
+                font-family: 'Quicksand';
+                letter-spacing: 1px;
+                font-weight: $font-tipis;
+            }
+        }
+    }
+}
+//akhir landing-page
+
+//cards
+.favorite-food{
+    position: relative;
+    top: 5rem;
+    
+    &-judul{
+       font-family: 'Quicksand';
+       font-weight: $font-tebal;
+       text-align: center;
+    }
+ }
+
+.favorite-drink{
+    position: relative;
+    top: 12rem;
+
+    &-judul{
+        font-family: 'Quicksand';
+       font-weight: $font-tebal;
+       text-align: center;
+    }
+} 
+
+ //akhir cards
+ 
+ 
+ 
+ 

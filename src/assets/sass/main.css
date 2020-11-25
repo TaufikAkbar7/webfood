@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.landing-page .landing-page-konten-maintext h1 {
+  font-family: 'Mosserat';
+}
+
+.landing-page .landing-page-konten-maintext p {
+  font-family: 'Quicksand';
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.favorite-food {
+  position: relative;
+  top: 5rem;
+}
+
+.favorite-food-judul {
+  font-family: 'Quicksand';
+  font-weight: 800;
+  text-align: center;
+}
+
+.favorite-drink {
+  position: relative;
+  top: 12rem;
+}
+
+.favorite-drink-judul {
+  font-family: 'Quicksand';
+  font-weight: 800;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
