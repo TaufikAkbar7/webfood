@@ -9,7 +9,7 @@
           <div
             class="col-md-3 mt-5 text-center d-flex justify-content-center"
             v-for="food in foods"
-            :key="food.id"
+            :key="food.idMeal"
           >
             <Cards :food="food" />
           </div>
@@ -27,6 +27,11 @@
           </div>
         </div>
       </div>
+      <div class="recipe">
+        <div class="recipe-overlay">
+          <Recipe />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -37,6 +42,7 @@ import Navbar from "@/components/Navbar.vue";
 import LandingPage from "@/components/LandingPage.vue";
 import Cards from "@/components/Cards.vue";
 import CardDrinks from "@/components/CardDrinks.vue";
+import Recipe from "@/components/Recipe.vue";
 import axios from "axios";
 
 export default {
@@ -45,7 +51,8 @@ export default {
     Navbar,
     LandingPage,
     Cards,
-    CardDrinks
+    CardDrinks,
+    Recipe
   },
   data() {
     return {
@@ -64,18 +71,16 @@ export default {
   mounted() {
     //Foods
     axios
-      .get(
-        "https://api.spoonacular.com/food/menuItems/search?query=pizza&number=4&apiKey=25daab54e8b342a7af2bed4da57f0f2f"
-      )
+      .get("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
       .then((response) => {
-        this.setMakanan(response.data.menuItems);
+        this.setMakanan(response.data.meals);
       })
       .catch((error) => {
         console.log(error);
       });
     //Drinks
      axios
-     .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=vodka")
+     .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito")
      .then((response) => {
         this.setMinuman(response.data.drinks);
      })

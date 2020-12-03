@@ -1,10 +1,11 @@
 <template>
-    <div class="card" style="width: 18rem;">
-        <img :src="food.image" class="card-img-top" alt="...">
+    <div class="card text-center" style="width: 18rem;">
+        <img :src="food.strMealThumb" class="card-img-top" alt="...">
         <div class="card-body">
-        <h5 class="card-title">{{food.title}}</h5>
-  </div>
-</div>
+        <h5 class="card-title">{{food.strMeal}}</h5>
+         <router-link class="btn btn-primary" :to="'/foods/' +food.idMeal">Lihat Recipe</router-link>
+        </div>
+    </div>
 </template>
 
 <script>
