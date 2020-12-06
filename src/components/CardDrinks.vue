@@ -15,6 +15,15 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.favorite-drink{
+    position: relative;
+    top: 12rem;
+    
+    &-judul{
+        font-family: 'Quicksand';
+       font-weight: $font-tebal;
+       text-align: center;
+    }
+}
 </style>

@@ -1,8 +1,11 @@
 <template>
   <div class="home">
-    <div class="container">
-      <Navbar />
-      <LandingPage />
+    <Navbar />
+     <div class="recipe">
+        <div class="recipe-overlay">
+           <Recipe /> 
+        </div>
+      </div>   
       <div class="favorite-food mt-5">
         <h2 class="favorite-food-judul">Favorite Foods</h2>
         <div class="row mt-2">
@@ -27,19 +30,12 @@
           </div>
         </div>
       </div>
-      <div class="recipe">
-        <div class="recipe-overlay">
-          <Recipe />
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
-import LandingPage from "@/components/LandingPage.vue";
 import Cards from "@/components/Cards.vue";
 import CardDrinks from "@/components/CardDrinks.vue";
 import Recipe from "@/components/Recipe.vue";
@@ -49,7 +45,6 @@ export default {
   name: "Home",
   components: {
     Navbar,
-    LandingPage,
     Cards,
     CardDrinks,
     Recipe
@@ -90,3 +85,8 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+body{
+    overflow-x: hidden;
+} 
+</style>

@@ -15,6 +15,26 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+.favorite-food{
+    position: relative;
+    top: 5rem;   
+    padding: 1rem;
+    
+
+    &-judul{
+       font-family: 'Quicksand';
+       font-weight: $font-tebal;
+       text-align: center;
+    }
+    
+    .row{
+        
+        .card{
+            @include wrap(1px, 1px, 2px, #fff);
+        }
+    }
+    
+ }
 
 </style>
