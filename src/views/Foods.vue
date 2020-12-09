@@ -24,16 +24,15 @@
           </div>
         </div>
       </div>
-
-      <div class="row mb-4">
+       <div class="row mb-4">
         <div
           class="col-md-4 mt-4"
           v-for="food in products"
           :key="food.idMeal"
         >
-          <Cards :food="food" />
+        <RandomFoods :food='food'/>
         </div>
-      </div>
+       </div>
     </div>
   </div>
 </template>
@@ -41,14 +40,14 @@
 <script>
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
-import Cards from "@/components/Cards.vue";
+import RandomFoods from "@/components/RandomFoods.vue";
 import axios from "axios";
 
 export default {
   name: "Foods",
   components: {
     Navbar,
-    Cards,
+    RandomFoods,
   },
   data() {
     return {

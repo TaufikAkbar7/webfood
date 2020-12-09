@@ -31,7 +31,7 @@
           v-for="drink in drinks"
           :key="drink.idDrink"
         >
-          <CardsDrinks :drink="drink" />
+          <RandomDrinks :drink="drink" />
         </div>
       </div>
     </div>
@@ -41,14 +41,14 @@
 <script>
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
-import CardsDrinks from "@/components/CardDrinks.vue";
+import RandomDrinks from "@/components/RandomDrinks.vue";
 import axios from "axios";
 
 export default {
   name: "Drinks",
   components: {
     Navbar,
-    CardsDrinks,
+    RandomDrinks,
   },
   data() {
     return {
