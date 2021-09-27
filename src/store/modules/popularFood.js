@@ -1,8 +1,8 @@
 import Axios from "axios"
 
-export default{
-    state(){
-        return{
+export default {
+    state() {
+        return {
             foodResults: ''
         }
     },
@@ -10,13 +10,17 @@ export default{
         getFoodResults: state => state.foodResults
     },
     actions: {
-        async foodResults({state, rootState}){
-            await Axios 
-            .get(`https://www.themealdb.com/api/json/v1/${rootState.api_key}/search.php?f=a`)
-            .then((response) => {
-                state.foodResults = response.data.meals
-            })
-            .catch((error) => console.log(error));
+        async foodResults({ commit, rootState }) {
+            await Axios
+                .get(`https://api.spoonacular.com/recipes/random?apiKey=${rootState.api_key}&includeNutrition=true&number=${rootState.defaultNumberFood}`)
+                .then((response) => {
+                    commit('setFood', response.data.recipes)
+                    console.log(response)
+                })
+                .catch((error) => console.log(error));
         }
+    },
+    mutations: {
+        setFood: (state, foods) => (state.foodResults = foods)
     }
 }

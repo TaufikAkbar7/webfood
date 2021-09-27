@@ -3,7 +3,6 @@
     <Navbar />
     <Recipe />
     <PopularFoods />
-    <PopularDrinks />
   </div>
 </template>
 
@@ -11,7 +10,6 @@
 // @ is an alias to /src
 import Navbar from "@/components/Navbar.vue";
 import PopularFoods from "@/components/PopularFoods.vue";
-import PopularDrinks from "@/components/PopularDrinks.vue";
 import Recipe from "@/components/Recipe.vue";
 
 export default {
@@ -19,12 +17,11 @@ export default {
   components: {
     Navbar,
     PopularFoods,
-    PopularDrinks,
     Recipe,
   },
 };
 </script>
-<style lang="scss">
+<style>
 body {
   overflow-x: hidden;
 }

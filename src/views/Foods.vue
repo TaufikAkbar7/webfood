@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col">
-          <h2>Daftar Recipe<strong> Makanan</strong></h2>
+          <h2>Daftar Recipe Makanan</h2>
         </div>
       </div>
       <div class="row mt-3">
@@ -27,8 +27,8 @@
        <div class="row mb-4">
         <div
           class="col-md-4 mt-4"
-          v-for="food in products"
-          :key="food.idMeal"
+          v-for="food in foods"
+          :key="food.id"
         >
         <RandomFoods :food='food'/>
         </div>
@@ -51,21 +51,22 @@ export default {
   },
   data() {
     return {
-      products: [],
+      foods: [],
       search: ''
     };
   },
   methods: {
-    setProduct(data) {
-      this.products = data;
+    setFoods(data) {
+      this.foods = data;
     },
     searchFood(){
        axios
       .get(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${this.search}`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${this.$store.state.api_key}&query=${this.search}`
       )
       .then((response) => {
-        this.setProduct(response.data.meals);
+        this.setFoods(response.data.results);
+        console.log(response.data.results)
       })
       .catch((error) => {
         // handle error
@@ -73,13 +74,14 @@ export default {
       });
     }
   },
-  mounted() {
+  created() {
+    this.$store.state.defaultNumberFood = 6
     axios
       .get(
-        "https://www.themealdb.com/api/json/v1/1/search.php?f=b"
+        `https://api.spoonacular.com/recipes/random?apiKey=${this.$store.state.api_key}&includeNutrition=true&number=${this.$store.state.defaultNumberFood}`
       )
       .then((response) => {
-        this.setProduct(response.data.meals);
+        this.setFoods(response.data.recipes);
       })
       .catch((error) => {
         // handle error

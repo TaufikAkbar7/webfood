@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row mt-4">
         <div class="col">
-          <h2>Daftar Recipe<strong> Minuman</strong></h2>
+          <h2>Daftar Recipe Minuman</h2>
         </div>
       </div>
       <div class="row mt-3">
@@ -74,7 +74,7 @@ export default {
       });
     }
   },
-  mounted() {
+  created() {
     axios
       .get(
         "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=c"

@@ -7,7 +7,6 @@
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
           qui?</span
         >
-        <br /><button type="button" class="btn btn-light">Let's Cook!</button>
       </div>
     </div>
   </div>
