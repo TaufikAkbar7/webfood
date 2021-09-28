@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Roboto+Mono:wght@300&display=swap');
 
 //colors
-$primary-color: #63C9FF;
-$secondary-color: #999;
+$primary-color: #FFCF63;
+$secondary-color: #FFFFFF;
+$third-color: #000;
 
 //font weights
 $font-tipis: 300;
@@ -12,9 +12,11 @@ $font-tebal: 800;
 
 
 //card wrap
-@mixin wrap($x, $y, $blur, $color){
+@mixin wrap($x, $y, $blur, $spread, $color){
     background: #fff;
-    box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $spread $color;
+    -webkit-box-shadow: $x $y $blur $spread $color;
+    -moz-box-shadow: $x $y $blur $spread $color;
 }
 
 *{

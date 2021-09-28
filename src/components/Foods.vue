@@ -1,32 +1,28 @@
 <template>
   <div>
-    <Navbar />
     <div class="container">
       <div class="row mt-4">
         <div class="col">
-          <h2>Daftar Recipe Makanan</h2>
+          <h2 class="col-judul">List Recipe</h2>
         </div>
       </div>
       <div class="row mt-3">
-        <div class="col">
-          <div class="input-group mb-3">
+        <div class="col d-flex justify-content-center">
+          <div class="col-wrap-input mb-3">
             <input
               v-model="search"
               @keyup="searchFood"
               type="text"
-              class="form-control"
+              class="col-input"
               placeholder="search foods..."
               aria-describedby="basic-addon1"
             />
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Search</span>
-            </div>
           </div>
         </div>
       </div>
        <div class="row mb-4">
         <div
-          class="col-md-4 mt-4"
+          class="col-md-4 mt-4 d-flex justify-content-center"
           v-for="food in foods"
           :key="food.id"
         >
@@ -39,14 +35,12 @@
 
 <script>
 // @ is an alias to /src
-import Navbar from "@/components/Navbar.vue";
 import RandomFoods from "@/components/RandomFoods.vue";
 import axios from "axios";
 
 export default {
   name: "Foods",
   components: {
-    Navbar,
     RandomFoods,
   },
   data() {
@@ -90,3 +84,30 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+.col {
+  &-judul {
+    color: $primary-color;
+    font-weight: $font-tebal;
+    text-align: center;
+  }
+  &-wrap-input {
+    background: red;
+    width: 500px;
+  }
+  &-input {
+    width: 100%;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-bottom: $primary-color solid 1px;
+      font-size: 1.2rem;
+      color: rgb(130, 60, 7);
+      transition: 0.2s;
+      &:focus{
+        outline: none;
+        border-bottom: $primary-color solid 2px;
+      }
+}
+}
+
+</style>
