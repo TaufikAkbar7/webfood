@@ -40,13 +40,28 @@ export default {
       font-size: 55px;
       font-family: 'Caveat', cursive;
       font-weight: $font-tebal;
+      @include responsive(xs){
+          font-size: 45px;
+        }
+      @include responsive(sm){
+          font-size: 45px;
+        }
+      @include responsive(md){
+          font-size: 40px;
+        }
       }
 
       &-subtitle{
-        font-size: 35;
+        font-size: 20px;
         margin-top: 2rem;
         font-family: 'Roboto Mono', monospace;
         font-weight: $font-tebal;
+        @include responsive(xs){
+          font-size: 28px;
+        }
+        @include responsive(md){
+          font-size: 25px;
+        }
       }
   }
 
@@ -57,6 +72,20 @@ export default {
       width: 500px;
       height: 450px;
       margin-left: 50px;
+      @include responsive(xs){
+        width: 300px;
+        height: 250px;
+        // margin-right: 50px;
+      }
+      @include responsive(sm){
+        width: 500px;
+        height: 400px;
+        margin-left: 100px;
+      }
+      @include responsive(md){
+        width: 400px;
+        height: 350px;
+      }
     }
   }
 }
